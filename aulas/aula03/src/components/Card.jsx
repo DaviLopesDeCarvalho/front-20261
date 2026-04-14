@@ -1,32 +1,18 @@
-function Card() {
+function Card(props) {
   return (
-    <section>
-      <article>
-        <h3>Mural de Avisos</h3>
-        <ul>
-          <li>Inscrição para o projeto de extensão</li>
-          <li>Eleição para representante de turma</li>
-          <li></li>
-        </ul>
-      </article>
-      <article>
-        <h3>Calendário Acadêmico</h3>
-        <ul>
-          <li>23/02 - Início do período letivo 2026-1</li>
-          <li>25/04 - Prazo final para aplicação da P1</li>
-          <li>23/06 - Prazo final para aplicação da P2</li>
-          <li>04/07 - Fim do período letivo 2026-1</li>
-        </ul>
-      </article>
-      <article>
-        <h3>Minhas Disciplinas</h3>
-        <ul>
-          <li>BI e Data Warehousing</li>
-          <li>Construção de Frontend</li>
-          <li>Manutenção de Software e Devops</li>
-        </ul>
-      </article>
-    </section>
+    <article className={`border border-[#ccc] rounded-xl overflow-hidden bg-white flex flex-col ${props.span ? "col-span-1 md:col-span-2" : "col-span-1"}`}>
+      
+      <h3 className="bg-[#e6e6e6] px-5 py-4 border-b border-[#ccc] font-bold text-lg text-[#1a1a1a]">
+        {props.titulo}
+      </h3>
+      
+      <ul className="p-5 flex-1 text-[#1a1a1a] space-y-2">
+        {props.itens?.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+      
+    </article>
   );
 }
 

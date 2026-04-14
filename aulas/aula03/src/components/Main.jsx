@@ -1,12 +1,19 @@
-import Card from "./Card";
 import Topbar from "./Topbar";
 
-function Main() {
+function Main(props) {
   return (
-    <main className="flex flex-col max-w-screen">
-      <Topbar />
-      <h2>Bem-vindo ao portal do aluno</h2>
-      <Card />
+    <main className="flex-1 p-6 md:p-10 bg-white min-h-screen flex flex-col w-full">
+      <Topbar titulo={props.titulo} />
+      
+      {props.subtitulo && (
+        <p className="text-xl md:text-2xl font-bold text-gray-700 mb-10">
+          {props.subtitulo}
+        </p>
+      )}
+
+      <section className="w-full">
+        {props.children}
+      </section>
     </main>
   );
 }

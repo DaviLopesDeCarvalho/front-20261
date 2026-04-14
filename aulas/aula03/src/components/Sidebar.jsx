@@ -1,14 +1,14 @@
 import logo from "../assets/learn.svg";
 import Menu from "./Menu";
 
-function Sidebar() {
+function Sidebar(props) {
   return (
-    <aside className="hidden md:block bg-gray-300">
-      <header className="flex flex-row">
-        <img src={logo} alt="Logotipo Aluno Online" />
-        <h1>Aluno Online</h1>
+    <aside className="hidden md:flex md:w-[320px] bg-[#ededed] p-10 flex-col flex-shrink-0 min-h-screen">
+      <header className="flex items-center gap-[15px] mb-[50px]">
+        <img src={logo} alt="Logotipo Aluno Online" className="w-10 object-contain" />
+        <h1 className="text-2xl font-bold text-[#1a1a1a]">Aluno Online</h1>
       </header>
-      <Menu />
+      <Menu navegaPara={props.navegaPara}/>
     </aside>
   );
 }
